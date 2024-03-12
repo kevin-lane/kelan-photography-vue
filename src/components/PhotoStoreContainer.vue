@@ -1,13 +1,28 @@
 <script>
 import PhotoStore from './PhotoStore.vue';
+import PhotoItem from './PhotoItem.vue';
   export default {
-    components: { PhotoStore }
+    data(){
+      return{
+        photoItem: false
+      }
+    },
+    methods: {
+      goToImage(){
+        this.photoItem = true;
+      },
+      goBackToStore(){
+        this.photoItem = false;
+      }
+    },
+    components: { PhotoStore, PhotoItem }
 }
 </script>
 
 <template>
   <div id="container">
-    <PhotoStore />
+    <PhotoItem v-if="photoItem" @go-back="goBackToStore"/>
+    <PhotoStore v-else @open-photo="goToImage"/>
   </div>
 </template>
 
@@ -29,6 +44,5 @@ import PhotoStore from './PhotoStore.vue';
   p{
     font-family: 'Ephesis';
     font-size: 40px;
-
   }
 </style>
