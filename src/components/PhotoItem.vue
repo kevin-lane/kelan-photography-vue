@@ -1,21 +1,14 @@
 <script>
-  import colombo from "@/assets/colombo.jpg";
-import GoBackButton from "./icons/GoBackButton.vue";
-
+  import GoBackButton from "./icons/GoBackButton.vue";
   export default {
-    props: {
-        title: String,
-        description: String,
-        image: Image
-    },
     components: { GoBackButton }
-}
+  }
 </script>
 
 <template>
   <div id="photo-item-container">
-    <!-- <img src="colombo" alt=""> -->
-    <GoBackButton @click="$emit('goBack')" />
+    <GoBackButton @click="$emit('goBack')" id="go-back-button" />
+    <img :src="this.$store.state.image" :alt="this.$store.state.title" width="780px" height="330px">
     <h1>{{ this.$store.state.title }}</h1>
     <p>{{ this.$store.state.description }}</p>
     <button id="download-button">DOWNLOAD FOR 99KR</button>
@@ -30,11 +23,31 @@ import GoBackButton from "./icons/GoBackButton.vue";
     font-family: 'Esteban'
   }
 
+  h1{
+    font-size: xxx-large;
+  }
+
+  p{
+    font-size: large;
+  }
+
+  img{
+    margin-top: 4rem;
+  }
+
   #photo-item-container{
     position: relative;
   }
 
+  #go-back-button{
+    position: absolute;
+    top: 5rem;
+    left: 3rem;
+    cursor: pointer;
+  }
+
   #download-button{
+    margin-top: 4rem;
     width: 400px;
     height: 70px;
     border-color: white;
@@ -43,10 +56,5 @@ import GoBackButton from "./icons/GoBackButton.vue";
     font-family: 'Cinzel';
     font-size: x-large;
     margin-bottom: 20px;
-    /* position: absolute;
-    margin: ;
-    margin-bottom: 0; */
-    /* margin: auto;
-    bottom: 100px; */
   }
 </style>

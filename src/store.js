@@ -13,8 +13,11 @@ const store = createStore({
     },
     setPhotoDescription(state, description){
       state.description = description;
+    },
+    setImage(state, image){
+      state.image = image;
     }
   }
-})
+});
 
 export default store;

@@ -25,17 +25,18 @@
         };
     },
     methods: {
-      openPhoto(title, description){
+      openPhoto(title, description, imageSrc){
         store.commit('setPhotoTitle', title);
         store.commit('setPhotoDescription', description);
+        store.commit('setImage', imageSrc);
         this.$emit('open-photo');
       }
     }
-}
+  }
 </script>
 
 <template>
-  <div v-for="(image, index) in images" @click="openPhoto(image.title, image.description)" id="img-container">
+  <div v-for="(image, index) in images" @click="openPhoto(image.title, image.description, image.src)" id="img-container">
     <div id="hover-layer">
       <h3 id="image-title">{{ image.title }}</h3>
     </div>
@@ -49,11 +50,9 @@
     margin: 1rem;
     border-radius: 32px;
   }
-
   #img-container{
     display: inline-block;
   }
-
   #hover-layer{
     width: 270px;
     height: 270px;
@@ -64,7 +63,6 @@
     border-radius: 32px;
     opacity: 0.1;
   }
-
   #hover-layer:hover{
     font-family: 'Esteban';
     font-size: 20px;
@@ -72,7 +70,6 @@
     color: white;
     opacity: 0.8;
   }
-
   #image-title{
     margin-top: 3rem;
   }

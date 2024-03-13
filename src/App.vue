@@ -14,11 +14,9 @@
     methods: {
       goToStore(){
         this.home = false;
-        console.log(this.home);
       },
       goHome(){
         this.home = true;
-        console.log(this.home);
       }
     }
   }
@@ -31,7 +29,6 @@
       @go-store="goToStore"
     />
   </header>
-
   <main>
     <Container
       v-if="home"

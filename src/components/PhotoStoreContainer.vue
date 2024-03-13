@@ -40,7 +40,6 @@ import PhotoItem from './PhotoItem.vue';
     border-radius: 2rem;
     opacity: 0.8;
   }
-
   p{
     font-family: 'Ephesis';
     font-size: 40px;
