@@ -18,7 +18,6 @@
 <style scoped>
   @import url('https://fonts.googleapis.com/css?family=Esteban');
   @import url('https://fonts.googleapis.com/css?family=Cinzel');
-
   h1, p{
     font-family: 'Esteban'
   }
@@ -34,18 +33,15 @@
   img{
     margin-top: 4rem;
   }
-
   #photo-item-container{
     position: relative;
   }
-
   #go-back-button{
     position: absolute;
     top: 5rem;
     left: 3rem;
     cursor: pointer;
   }
-
   #download-button{
     margin-top: 4rem;
     width: 400px;

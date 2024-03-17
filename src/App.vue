@@ -14,9 +14,11 @@
     methods: {
       goToStore(){
         this.home = false;
+        this.$store.state.toggleMobileNav = false; //Close mobile navbar when clicking on link
       },
       goHome(){
         this.home = true;
+        this.$store.state.toggleMobileNav = false; //Close mobile navbar when clicking on link
       }
     }
   }

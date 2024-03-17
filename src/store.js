@@ -1,11 +1,12 @@
-import { createApp } from 'vue';
 import { createStore } from 'vuex';
 
 const store = createStore({
   state: {
     title: 'Your Photo Name',
     description: '',
-    image: ''
+    image: '',
+    screenWidth: screen.width,
+    toggleMobileNav: false
   },
   mutations: {
     setPhotoTitle(state, title){

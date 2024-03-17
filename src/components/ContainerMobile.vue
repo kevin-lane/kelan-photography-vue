@@ -17,13 +17,14 @@
 <style scoped>
   @import url('https://fonts.googleapis.com/css?family=Cinzel');
   @import url('https://fonts.googleapis.com/css?family=Ephesis');
+
   #container{
     margin: auto;
     text-align: center;
     background-color: black;
     color: white;
-    width: 1200px;
-    min-height: 500px;
+    width: 305px;
+    min-height: 350px;
     border-radius: 2rem;
     opacity: 0.6;
   }
@@ -34,16 +35,5 @@
   p{
     font-family: 'Ephesis';
     font-size: 40px;
-  }
-  @media screen and (max-width: 500px) {
-    #container{
-      width: 305px;
-    }
-    h1{
-      font-size: 36px;
-    }
-    p{
-      font-size: 25px;
-    }
   }
 </style>
