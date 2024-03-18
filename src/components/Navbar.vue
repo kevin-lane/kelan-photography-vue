@@ -1,10 +1,7 @@
 <script>
   export default {
     methods: {
-      openNavbar(mobileNavbarOpen){
-        console.log("Navbar open");
-        console.log(mobileNavbarOpen);
-        console.log(this.$store.state.toggleMobileNav);
+      openNavbar(){
         this.$store.state.toggleMobileNav = true;
       },
       closeNavbar(){
@@ -19,7 +16,7 @@
     <!-- Navbar and menu for mobile, set to if less than 500 since most phones width is around that number -->
     <div v-if="this.$store.state.screenWidth < 500">
       <!-- If mobile navbar is open, show this icon -->
-      <div v-if="this.$store.state.toggleMobileNav" @click="closeNavbar" class="hamburger-menu">
+      <div v-if="this.$store.state.toggleMobileNav" @click="closeNavbar" class="hamburger-menu-open">
         <span></span>
         <span></span>
       </div>
@@ -81,9 +78,20 @@
     width: 50px;
     height: 50px;
     margin-left: auto;
+    margin-right: 1rem;
     padding-bottom: 5rem;
     position: relative;
   }
+  .hamburger-menu-open{
+    width: 50px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: 2rem;
+    margin-top: 1rem;
+    padding-bottom: 5rem;
+    position: relative;
+  }
+
   .hamburger-menu span {
     height: 5px;
     width: 100%;
@@ -95,7 +103,18 @@
     transform: translate(-90%, -50%);
     transition: .3s ease;
   }
-
+  .hamburger-menu-open span{
+    height: 5px;
+    width: 100%;
+    background-color: black;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-90%, -50%);
+    transition: .3s ease;
+  }
+  /* Span bars when menu closed */
   .hamburger-menu span:nth-child(1){
     top: 25%;
     width: 50px;
@@ -108,5 +127,17 @@
   .hamburger-menu span:nth-child(3){
     top: 75%;
     width: 50px;
+  }
+
+  /* Span bars when menu open */
+  .hamburger-menu-open span:nth-child(1){
+    top: 25%;
+    width: 50px;
+    transform: rotate(45deg);
+  }
+  .hamburger-menu-open span:nth-child(2){
+    top: 25%;
+    width: 50px;
+    transform: rotate(-45deg);
   }
 </style>

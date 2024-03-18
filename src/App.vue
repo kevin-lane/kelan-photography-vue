@@ -39,4 +39,5 @@
     />
     <PhotoStoreContainer v-else />
   </main>
+  <footer>©Kevin Lane</footer>
 </template>

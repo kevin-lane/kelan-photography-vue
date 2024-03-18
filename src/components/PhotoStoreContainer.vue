@@ -44,4 +44,9 @@ import PhotoItem from './PhotoItem.vue';
     font-family: 'Ephesis';
     font-size: 40px;
   }
+  @media screen and (max-width: 768px) {
+    #container{
+      width: 330px;
+    }
+  }
 </style>
